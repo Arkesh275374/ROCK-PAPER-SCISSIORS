@@ -1,0 +1,39 @@
+import random
+
+user_wins=0
+computer_wins=0
+print("\t Rock Paper Scissor")
+
+while True:
+    user_input=input("\n Type Rock or Paper or Scissor or Q to quit : ").lower()
+    if user_input=='q':
+       break
+    a=['rock','paper','scissor']
+    if user_input not in a:
+        print("Invalid Input.....Try Again")
+        continue
+    
+    random_number=random.randint(0,2)
+    computer_select=a[random_number]
+    
+    print(f"Computer Selected : {computer_select}")
+    
+    if user_input=='rock' and computer_select=='scissor':
+        print("You Won")
+        user_wins+=1
+        
+    elif user_input=='paper' and computer_select=='rock':
+        print("You Won")
+        user_wins+=1
+    elif user_input=='scissor' and computer_select=='paper':
+        print("You Won")
+        user_wins+=1
+    elif user_input==computer_select:
+        print("Draw")
+    else:
+        print("You Lose")
+        computer_wins+=1
+    
+print("\n\n\t Thank you for Playing") 
+print(f"Your Score : {user_wins} \nComputer Score : {computer_wins}")
+
